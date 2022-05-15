@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "config:base",
+    "github>aquaproj/aqua-renovate-config#0.1.10",
+  ],
+  "automerge": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "matchUpdateTypes": ["digest"],
+      "enabled": false
+    },
+    {
+      "postUpdateOptions": ["gomodTidy"],
+      "matchManagers": ["gomod"]
+    }
+  ]
+}
