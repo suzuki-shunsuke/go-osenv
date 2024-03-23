@@ -1,21 +1,15 @@
 {
-  "extends": [
-    "config:base",
+  extends: [
+    "config:best-practices",
+    "github>suzuki-shunsuke/renovate-config#2.3.0",
+    "github>suzuki-shunsuke/renovate-config:nolimit#2.3.0",
+    "github>suzuki-shunsuke/renovate-config:action-go-version#2.3.0",
     "github>aquaproj/aqua-renovate-config#2.2.0",
   ],
-  "automerge": true,
-  "packageRules": [
+  packageRules: [
     {
-      "matchUpdateTypes": ["major"],
-      "automerge": false
-    },
-    {
-      "matchUpdateTypes": ["digest"],
-      "enabled": false
-    },
-    {
-      "postUpdateOptions": ["gomodTidy"],
-      "matchManagers": ["gomod"]
+      postUpdateOptions: ["gomodTidy"],
+      matchManagers: ["gomod"]
     }
   ]
 }
