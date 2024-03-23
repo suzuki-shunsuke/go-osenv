@@ -3,7 +3,7 @@ package osenv
 import "os"
 
 type OSEnv interface {
-	Getenv(string) string
+	Getenv(k string) string
 }
 
 type osEnv struct{}
